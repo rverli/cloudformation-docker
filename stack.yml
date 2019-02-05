@@ -1,12 +1,18 @@
 Resources:
 
-  AppNode:
+  MyEIP:
+  # http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html
+    Type: AWS::EC2::EIP
+    Properties:
+      InstanceId: !Ref MyAppNodeEC2
+
+  MyAppNodeEC2:
   # http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html
     Type: AWS::EC2::Instance
     Properties:
       InstanceType: t2.micro
-      ImageId: ami-076e276d85f524150
-      KeyName: aws-keypair2
+      ImageId: ami-0f9cf087c1f27d9b1
+      KeyName: aws-key
       SecurityGroups:
         - !Ref AppNodeSG
       UserData: !Base64 |
@@ -44,23 +50,23 @@ Resources:
         ToPort: '2375'
         CidrIp: 0.0.0.0/0
 
-  DatabaseInstance:
+#  DatabaseInstance:
   # https://docs.aws.amazon.com/pt_br/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html
-    Type: AWS::RDS::DBInstance
-    Properties:
-      DBName: "blog"
-      Engine: MySQL
-      MasterUsername: bloguser
-      MasterUserPassword: password123
-      DBInstanceClass: db.t2.micro
-      AllocatedStorage: '5'
-      DBSecurityGroups:
-        - !Ref DatabaseSG
+#    Type: AWS::RDS::DBInstance
+#    Properties:
+#      DBName: "blog"
+#      Engine: MySQL
+#      MasterUsername: bloguser
+#      MasterUserPassword: password123
+#      DBInstanceClass: db.t2.micro
+#      AllocatedStorage: '5'
+#      DBSecurityGroups:
+#        - !Ref DatabaseSG
 
-  DatabaseSG:
+#  DatabaseSG:
   # http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html
-    Type: AWS::RDS::DBSecurityGroup
-    Properties:
-      GroupDescription: Security Group for RDS public access
-      DBSecurityGroupIngress:
-        - CIDRIP: 0.0.0.0/0
+#    Type: AWS::RDS::DBSecurityGroup
+#    Properties:
+#      GroupDescription: Security Group for RDS public access
+#      DBSecurityGroupIngress:
+#        - CIDRIP: 0.0.0.0/0
