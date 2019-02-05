@@ -1,14 +1,6 @@
 # AWS CloudFormation + EC2 + RDS and Docker App
 
-Devteds [Episode #7](https://devteds.com/episodes/7-create-aws-cloudformation-stack-for-ec2-rds-and-deploy-docker-app)
-
 Create an application stack that consist of an EC2 instance and RDS Instance for MySQL, using AWS CloudFormation. And then deploy an dockerized / containerized API application to run on EC2 instance.
-
-[Episode video link](https://youtu.be/8J0g_xWUzV0)
-
-[![Episode Video Link](https://i.ytimg.com/vi/8J0g_xWUzV0/hqdefault.jpg)](https://youtu.be/8J0g_xWUzV0)
-
-Visit https://devteds.com to watch all the episodes. If you're looking to learn [Docker with ECS](https://github.com/devteds/e9-cloudformation-docker-ecs) checkout [episode #9](https://devteds.com/episodes/9-docker-on-amazon-ecs-using-cloudformation)
 
 ## Setup AWS & CLI
 
