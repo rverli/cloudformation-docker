@@ -1,0 +1,70 @@
+DevOps Code Challenge
+
+Spin up one or more EC2 servers and deploy a dockerized nodejs app to them
+
+The Task
+
+Take the provided Nodejs application (ceros-ski), wrap it in one or more docker containers, spin up an EC2 server and deploy the docker container(s) to that server.  After the deployment has run, the application should be web accessible.
+
+Instructions
+
+Please download the ceros-ski code to work on.  When you’ve finished making your changes, zip it back up and email it back to us.  Feel free to move around the code and organize it in the way that best makes sense to you.  
+ 
+Don’t worry about the javascript code challenge or improving the javascript code -- ceros-ski is the code challenge we give to prospective full stack and front end developers -- you just need to worry about deploying it as is.
+ 
+You can use any tools you like for IaC, configuration management, scripting, CI/CD, or orchestration.  
+ 
+It should take you less than one working day (roughly 8 hours).  But it’s not timed, you may take as much time as you like and feel you are willing to give to it.
+ 
+Please make sure you stick to the AWS Free Tier when spinning up EC2 servers.  You won’t be compensated for any charges you may acru.  
+
+Acceptance Criteria
+
+When these are met, you can consider the challenge “done”.
+ 
+
+Ceros-ski app is wrapped in a docker container
+
+Any supporting services are also wrapped in docker containers
+
+Ceros-ski container and any supporting containers can be deployed to free-tier ec2 server(s) in an automated way
+
+EC2 server(s), and any supporting services or configuration, are defined in code (cloudformation, terraform, etc)
+
+Any services used are securely configured, and any security concerns are appropriately handled
+
+Once deployed, ceros-ski is accessible from the web
+
+Process of deploying the ceros-ski app container to ec2 is clearly documented
+
+All code is clearly documented.  Any decisions to take on tech debt are documented and explained
+
+Grading
+
+You will be graded on the following.
+ 
+
+How well you automated the deployment process and how easy it is to deploy
+
+How readable, organized, and documented your code is
+
+How well configured any supporting services are
+
+How well security concerns have been handled
+
+The quality, detail, and clarity of your usage documentation.
+
+How well documented and reasonable tech debt decisions are
+
+Bonus
+
+Note: You won’t be marked down for excluding any of this, it’s purely bonus.  If you’re really up against the clock, make sure to focus on writing clean, well organized, and well documented code before taking on any of the bonus.
+ 
+If you find yourself with time to spare, are enjoying yourself, and really want to impress us, add in one or more of the following.
+ 
+
+Deploy multiple ceros-ski app containers
+
+Add an nginx instance in front of app container and configure it for load balancing
+
+Write an additional script, or modify the existing deploy script, to allow for updates to ceros-ski to be deployed with no downtime
